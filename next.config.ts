@@ -1,8 +1,22 @@
-import type { NextConfig } from 'next';
-import createNextIntlPlugin from 'next-intl/plugin';
+import type { NextConfig } from "next";
 
-const withNextIntl = createNextIntlPlugin();
+const nextConfig: NextConfig = {
+  // Для Docker деплоя
+  output: "standalone",
+  
+  // Оптимизация изображений
+  images: {
+    formats: ["image/avif", "image/webp"],
+  },
+  
+  // Сжатие
+  compress: true,
+  
+  // Строгий режим React
+  reactStrictMode: true,
+  
+  // Убираем X-Powered-By header для безопасности
+  poweredByHeader: false,
+};
 
-const nextConfig: NextConfig = {};
-
-export default withNextIntl(nextConfig);
+export default nextConfig;

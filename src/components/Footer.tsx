@@ -1,32 +1,42 @@
-'use client';
+"use client";
 
-import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
-import styles from './Footer.module.css';
-
-const TELEGRAM_URL = process.env.NEXT_PUBLIC_TELEGRAM_URL || '#';
+import Link from "next/link";
+import { Separator } from "@/components/ui/separator";
+import { useI18n } from "@/i18n/context";
 
 export function Footer() {
-  const t = useTranslations('footer');
-  const year = new Date().getFullYear();
+  const { t } = useI18n();
 
   return (
-    <footer className={styles.footer}>
-      <div className={styles.footerInner}>
-        <Link href="/" className={styles.logo}>
-          Portfolio
-        </Link>
-        <nav className={styles.links} aria-label="Footer">
-          <Link href="/#about">{t('about')}</Link>
-          <Link href="/#reviews">{t('reviews')}</Link>
-          <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
-            {t('telegram')}
-          </a>
-        </nav>
+    <footer className="py-12 sm:py-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+          {/* Logo & Description */}
+          <div className="text-center md:text-left">
+            <Link
+              href="/"
+              className="inline-block font-mono text-xl sm:text-2xl font-bold mb-2"
+            >
+              {t.name}
+            </Link>
+            <p className="text-sm mb-2 text-muted-foreground">
+              {t.title}
+            </p>
+            <p className="text-sm text-muted-foreground">
+              {t.footer.privacy}
+            </p>
+          </div>
+        </div>
+
+        <Separator className="my-8" />
+
+        {/* Copyright */}
+        <div className="text-center">
+          <p className="text-sm text-muted-foreground">
+            {t.footer.copyright}
+          </p>
+        </div>
       </div>
-      <p className={styles.copyright}>
-        {t('copyright', { year })}
-      </p>
     </footer>
   );
 }
