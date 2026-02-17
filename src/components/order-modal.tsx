@@ -7,7 +7,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useI18n } from "@/i18n/context";
 import { ORDER_QUESTIONS } from "@/config/order-form";
-import { getApproximateCost } from "@/config/cost-mapping";
 
 interface AnswerItem {
   questionId: string;
@@ -19,11 +18,11 @@ interface OrderModalProps {
   onOpenChange: (open: boolean) => void;
 }
 
-const STEPS = ["questions", "description", "contact", "done"] as const;
+const STEPS = ["project_type", "has_design", "description", "contact", "done"] as const;
 
 export function OrderModal({ open, onOpenChange }: OrderModalProps) {
   const { t } = useI18n();
-  const [step, setStep] = useState<(typeof STEPS)[number]>("questions");
+  const [stepIndex, setStepIndex] = useState(0);
   const [answers, setAnswers] = useState<AnswerItem[]>([]);
   const [description, setDescription] = useState("");
   const [contactMethod, setContactMethod] = useState<"telegram" | "email">("telegram");
@@ -34,7 +33,9 @@ export function OrderModal({ open, onOpenChange }: OrderModalProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const step = STEPS[stepIndex];
   const questionsLabels = t.orderQuestions as Record<string, Record<string, string>>;
+  const currentQuestion = stepIndex < ORDER_QUESTIONS.length ? ORDER_QUESTIONS[stepIndex] : null;
 
   const handleSelect = useCallback((questionId: string, optionId: string) => {
     setAnswers((prev) => {
@@ -43,15 +44,13 @@ export function OrderModal({ open, onOpenChange }: OrderModalProps) {
     });
   }, []);
 
-  const answersMap = Object.fromEntries(answers.map((a) => [a.questionId, a.optionId]));
-  const costKey = ["project_type", "has_design"].map((id) => answersMap[id]).filter(Boolean);
-  const costLabel = costKey.length === 2 ? getApproximateCost(costKey) : null;
-  const canProceedFromQuestions = ORDER_QUESTIONS.every((q) => answers.some((a) => a.questionId === q.id));
+  const canProceedFromCurrentQuestion =
+    currentQuestion && answers.some((a) => a.questionId === currentQuestion.id);
 
   const handleClose = useCallback(() => {
     onOpenChange(false);
     setTimeout(() => {
-      setStep("questions");
+      setStepIndex(0);
       setAnswers([]);
       setDescription("");
       setContactMethod("telegram");
@@ -64,14 +63,12 @@ export function OrderModal({ open, onOpenChange }: OrderModalProps) {
   }, [onOpenChange]);
 
   const goNext = useCallback(() => {
-    const idx = STEPS.indexOf(step);
-    if (idx < STEPS.length - 1) setStep(STEPS[idx + 1]);
-  }, [step]);
+    setStepIndex((i) => Math.min(i + 1, STEPS.length - 1));
+  }, []);
 
   const goBack = useCallback(() => {
-    const idx = STEPS.indexOf(step);
-    if (idx > 0) setStep(STEPS[idx - 1]);
-  }, [step]);
+    setStepIndex((i) => Math.max(i - 1, 0));
+  }, []);
 
   const handleSubmit = useCallback(async () => {
     setError(null);
@@ -95,7 +92,7 @@ export function OrderModal({ open, onOpenChange }: OrderModalProps) {
         setError(data.error || t.orderModal.errorMessage);
         return;
       }
-      setStep("done");
+      setStepIndex(STEPS.length - 1);
     } catch {
       setError(t.orderModal.errorMessage);
     } finally {
@@ -105,41 +102,42 @@ export function OrderModal({ open, onOpenChange }: OrderModalProps) {
 
   return (
     <Dialog open={open} onOpenChange={(v) => (!v ? handleClose() : onOpenChange(v))}>
-      <DialogContent showClose={step !== "done"} className="max-h-[90vh] overflow-y-auto">
+      <DialogContent showClose={stepIndex !== STEPS.length - 1} className="max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>{t.orderModal.title}</DialogTitle>
         </DialogHeader>
 
-        {step === "questions" && (
+        {currentQuestion && (
           <div className="space-y-6">
-            {ORDER_QUESTIONS.map((q) => (
-              <div key={q.id}>
-                <p className="text-sm font-medium mb-2">{questionsLabels[q.id]?.label ?? q.id}</p>
-                <div className="flex flex-wrap gap-2">
-                  {q.options.map((opt) => {
-                    const selected = answers.find((a) => a.questionId === q.id)?.optionId === opt.id;
-                    return (
-                      <Button
-                        key={opt.id}
-                        type="button"
-                        variant={selected ? "default" : "outline"}
-                        size="sm"
-                        onClick={() => handleSelect(q.id, opt.id)}
-                      >
-                        {questionsLabels[q.id]?.[opt.id] ?? opt.id}
-                      </Button>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
-            {costLabel && (
-              <p className="text-sm text-muted-foreground">
-                {t.orderModal.approximateCost}: {costLabel}
+            <div>
+              <p className="text-sm font-medium mb-2">
+                {questionsLabels[currentQuestion.id]?.label ?? currentQuestion.id}
               </p>
-            )}
-            <div className="flex justify-end gap-2">
-              <Button onClick={goNext} disabled={!canProceedFromQuestions}>
+              <div className="flex flex-wrap gap-2">
+                {currentQuestion.options.map((opt) => {
+                  const selected =
+                    answers.find((a) => a.questionId === currentQuestion.id)?.optionId === opt.id;
+                  return (
+                    <Button
+                      key={opt.id}
+                      type="button"
+                      variant={selected ? "default" : "outline"}
+                      size="sm"
+                      onClick={() => handleSelect(currentQuestion.id, opt.id)}
+                    >
+                      {questionsLabels[currentQuestion.id]?.[opt.id] ?? opt.id}
+                    </Button>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="flex justify-between gap-2">
+              {stepIndex > 0 ? (
+                <Button variant="outline" onClick={goBack}>
+                  {t.orderModal.back}
+                </Button>
+              ) : <span />}
+              <Button onClick={goNext} disabled={!canProceedFromCurrentQuestion}>
                 {t.orderModal.next}
               </Button>
             </div>

@@ -12,18 +12,18 @@ export const ru = {
 
   hero: {
     badge: "Разработка под ключ",
-    title: "От идеи — до продукта.\nФуллстек под ключ.",
-    subtitle: "Сайты, интернет-магазины, Telegram-боты, Mini App и Web3. От концепции до запуска.",
+    title: "От идеи — до продукта.\nПродукт под ключ.",
+    subtitle: "Сайты, интернет-магазины, Telegram-боты, Mini App и Web3",
     features: [
       "Сайты и магазины",
       "Telegram-боты и Mini App",
       "Web3 и смарт-контракты",
     ],
-    primaryCta: "Сделать заказ",
+    primaryCta: "Заказать проект",
     stats: [
-      { value: "Full-stack", label: "стек" },
-      { value: "Под ключ", label: "релиз" },
-      { value: "TypeScript", label: "и не только" },
+      { value: "Быстро", label: "разработка" },
+      { value: "Качественно", label: "код" },
+      { value: "Безопасно", label: "инфраструктура" },
     ],
   },
 

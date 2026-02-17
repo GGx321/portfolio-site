@@ -39,7 +39,7 @@ export function useCanvasAnimation() {
       vy: (Math.random() - 0.5) * 0.5,
       radius: Math.random() * 2 + 1,
       opacity: Math.random() * 0.5 + 0.1,
-      color: Math.random() > 0.7 ? "#ef4444" : "#ffffff",
+      color: Math.random() > 0.7 ? "#228b62" : "#ffffff",
     }));
   }, []);
 
@@ -59,7 +59,7 @@ export function useCanvasAnimation() {
       rotationSpeed: (Math.random() - 0.5) * 0.01,
       opacity: Math.random() * 0.15 + 0.05,
       type: types[Math.floor(Math.random() * types.length)],
-      color: "#ef4444",
+      color: "#228b62",
     }));
   }, []);
 

@@ -12,8 +12,8 @@ export const en = {
 
   hero: {
     badge: "Turnkey development",
-    title: "From idea to product.\nFull-stack turnkey.",
-    subtitle: "Sites, online stores, Telegram bots, Mini App and Web3. From concept to launch.",
+    title: "From idea to product.\nProduct turnkey.",
+    subtitle: "Sites, online stores, Telegram bots, Mini App and Web3",
     features: [
       "Sites & stores",
       "Telegram bots & Mini App",
@@ -21,9 +21,9 @@ export const en = {
     ],
     primaryCta: "Order project",
     stats: [
-      { value: "Full-stack", label: "stack" },
-      { value: "Turnkey", label: "launch" },
-      { value: "TypeScript", label: "and more" },
+      { value: "Quickly", label: "development" },
+      { value: "Quality", label: "code" },
+      { value: "Secure", label: "infrastructure" },
     ],
   },
 

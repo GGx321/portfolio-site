@@ -63,7 +63,7 @@
   --muted-foreground: oklch(0.65 0 0);
   --accent: oklch(0.42 0.12 155);
   --accent-foreground: oklch(1 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
+  --destructive: oklch(0.45 0.12 155);
   --border: oklch(0.25 0.02 155);
   --input: oklch(0.2 0.01 155);
   --ring: oklch(0.42 0.12 155);
@@ -178,12 +178,10 @@ html,
     background-clip: text;
   }
   
-  .glow-red,
   .glow-green {
     box-shadow: 0 0 40px rgba(34, 139, 101, 0.3), 0 0 80px rgba(34, 139, 101, 0.1);
   }
   
-  .glow-red-sm,
   .glow-green-sm {
     box-shadow: 0 0 20px rgba(34, 139, 101, 0.2);
   }
