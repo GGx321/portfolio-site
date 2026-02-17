@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { getApproximateCost } from '@/config/cost-mapping';
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
@@ -62,6 +63,10 @@ function buildMessage(body: Body): string {
   if (body.description?.trim()) {
     lines.push('', 'Описание продукта:', `"${body.description.trim()}"`);
   }
+
+  const optionIds = body.answers.map((a) => a.optionId);
+  const cost = getApproximateCost(optionIds);
+  lines.push('', `Примерная стоимость: ${cost}`);
 
   lines.push('', 'Контакт:', `Имя: ${body.name}`, `Метод: ${CONTACT_METHOD_LABELS[body.contactMethod] ?? body.contactMethod}`);
 

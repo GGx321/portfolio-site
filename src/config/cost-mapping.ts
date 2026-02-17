@@ -12,9 +12,25 @@ export const COST_MAPPING: CostMapping = {
   tg_bot: 300,
   tg_miniapp: 600,
   web3: 800,
-  yes: 100,
-  no: 200,
-  example: 200,
+  yes: 0,
+  no: 0,
+  example: 0,
+  // комбинации: тип,дизайн (примерные цены в USD)
+  'site,yes': 300,
+  'site,no': 400,
+  'site,example': 400,
+  'shop,yes': 700,
+  'shop,no': 900,
+  'shop,example': 800,
+  'tg_bot,yes': 400,
+  'tg_bot,no': 500,
+  'tg_bot,example': 500,
+  'tg_miniapp,yes': 800,
+  'tg_miniapp,no': 1000,
+  'tg_miniapp,example': 900,
+  'web3,yes': 900,
+  'web3,no': 1000,
+  'web3,example': 1000,
 };
 
 export function getApproximateCost(selectedOptionIds: string[]): string {
