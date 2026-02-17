@@ -1,0 +1,108 @@
+{
+  "nav": {
+    "home": "Start",
+    "about": "Über uns",
+    "reviews": "Bewertungen",
+    "portfolio": "Portfolio",
+    "contact": "Kontakt",
+    "orderProject": "Projekt anfragen"
+  },
+  "home": {
+    "heroTitle": "Full-Stack-Entwickler",
+    "heroSubtitle": "Webanwendungen, APIs und sauberer Code.",
+    "aboutTeaser": "Ich entwickle moderne Webprodukte von der Idee bis zum Produktivbetrieb. Fokus auf Performance, SEO und Wartbarkeit.",
+    "learnMore": "Mehr erfahren",
+    "skillsTitle": "Technologien",
+    "ctaTitle": "Projekt besprechen?",
+    "ctaButton": "Projekt anfragen",
+    "heroBadge": "Entwicklung aus einer Hand",
+    "aboutTitle": "Über uns",
+    "aboutDesc": "Von der Idee zum Produkt: Konzept, Design, Entwicklung und Launch. Full-Stack, Telegram-Bots, Mini App und Web3.",
+    "stackTitle": "Tech-Stack",
+    "stackSub": "Moderne, bewährte Technologien.",
+    "servicesTitle": "Was wir machen",
+    "servicesSub": "Voller Zyklus von der Idee bis zum Release.",
+    "service1Title": "Webseiten & Shops",
+    "service1Desc": "Visitenkarten, Landing Pages, Onlineshops.",
+    "service2Title": "Telegram-Bots & Mini App",
+    "service2Desc": "Bots, Mini Apps, Integrationen.",
+    "service3Title": "Web3 & Krypto",
+    "service3Desc": "Smart Contracts, dApps, Integrationen.",
+    "reviewsTitle": "Bewertungen",
+    "review1Quote": "Schnell und qualitativ. Empfehlung.",
+    "review1Author": "— Kunde A",
+    "review2Quote": "Alles pünktlich, tolle Kommunikation.",
+    "review2Author": "— Kunde B",
+    "review3Quote": "Professionell, bestelle wieder.",
+    "review3Author": "— Kunde C",
+    "orderSectionTitle": "Projekt anfragen",
+    "orderSectionSub": "Beschreiben Sie Ihr Projekt — wir melden uns."
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "viewProject": "Projekt ansehen",
+    "noProjects": "Projekte folgen in Kürze."
+  },
+  "about": {
+    "title": "Über mich",
+    "body": "Full-Stack-Entwickler mit Erfahrung in Webanwendungen, APIs und Entwicklertools. Schwerpunkt auf Klarheit, Performance und langfristiger Wartbarkeit."
+  },
+  "contact": {
+    "title": "Kontakt",
+    "description": "Kontakt aufnehmen oder ein Projekt starten.",
+    "orderProject": "Projekt anfragen"
+  },
+  "orderQuestions": {
+    "project_type": {
+      "label": "Was für ein Projekt?",
+      "site": "Visitenkarten-Webseite",
+      "shop": "Onlineshop",
+      "tg_bot": "Telegram-Bot",
+      "tg_miniapp": "Telegram Mini App",
+      "web3": "Web3"
+    },
+    "has_design": {
+      "label": "Haben Sie ein Design?",
+      "yes": "Ja",
+      "no": "Nein",
+      "example": "Ich habe ein Beispiel"
+    }
+  },
+  "orderModal": {
+    "title": "Projekt anfragen",
+    "next": "Weiter",
+    "back": "Zurück",
+    "submit": "Absenden",
+    "close": "Schließen",
+    "descriptionLabel": "Beschreiben Sie Ihr Projekt",
+    "contactMethod": "Wie können wir Sie erreichen?",
+    "telegram": "Telegram",
+    "email": "E-Mail",
+    "yourName": "Ihr Name",
+    "phone": "Telefonnummer",
+    "telegramUsername": "Telegram-Benutzername (z. B. @username)",
+    "yourEmail": "Ihre E-Mail",
+    "successMessage": "Vielen Dank! Ich melde mich in Kürze.",
+    "errorMessage": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+  },
+  "theme": {
+    "light": "Hell",
+    "dark": "Dunkel"
+  },
+  "footer": {
+    "about": "Über uns",
+    "reviews": "Bewertungen",
+    "telegram": "Telegram",
+    "copyright": "© {year} · Entwicklung aus einer Hand"
+  },
+  "metadata": {
+    "homeTitle": "Full-Stack-Entwickler | Portfolio",
+    "homeDescription": "Portfolio und Kontakt für Full-Stack-Entwicklung.",
+    "portfolioTitle": "Portfolio | Projekte",
+    "portfolioDescription": "Ausgewählte Web- und Softwareprojekte.",
+    "aboutTitle": "Über mich | Full-Stack-Entwickler",
+    "aboutDescription": "Über mich und meine Erfahrung.",
+    "contactTitle": "Kontakt | Full-Stack-Entwickler",
+    "contactDescription": "Kontakt für Ihr Projekt."
+  }
+}

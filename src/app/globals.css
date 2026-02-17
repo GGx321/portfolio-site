@@ -1,0 +1,72 @@
+:root {
+  --color-bg-page: #fafaf9;
+  --color-bg-card: #ffffff;
+  --color-bg-elevated: #f5f5f4;
+  --color-text-primary: #0b0b0e;
+  --color-text-secondary: #52525b;
+  --color-text-muted: #71717a;
+  --color-border-subtle: #e7e5e4;
+  --color-accent-gold: #d4af37;
+  --color-accent-gold-hover: #c9a227;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --spacing-section: 80px;
+  /* Aliases for components */
+  --color-text: var(--color-text-primary);
+  --color-accent: var(--color-accent-gold);
+  --color-accent-hover: var(--color-accent-gold-hover);
+  --color-card-bg: var(--color-bg-card);
+  --color-border: var(--color-border-subtle);
+  --color-bg: var(--color-bg-card);
+}
+
+[data-theme="dark"] {
+  --color-bg-page: #0b0b0e;
+  --color-bg-card: #16161a;
+  --color-bg-elevated: #1a1a1e;
+  --color-text-primary: #fafaf9;
+  --color-text-secondary: #6b6b70;
+  --color-text-muted: #8e8e93;
+  --color-border-subtle: #2a2a2e;
+  --color-accent-gold: #d4af37;
+  --color-accent-gold-hover: #e5c158;
+  --color-text: var(--color-text-primary);
+  --color-accent: var(--color-accent-gold);
+  --color-accent-hover: var(--color-accent-gold-hover);
+  --color-card-bg: var(--color-bg-card);
+  --color-border: var(--color-border-subtle);
+  --color-bg: var(--color-bg-card);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  background: var(--color-bg-page);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--color-accent-gold);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}

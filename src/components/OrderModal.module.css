@@ -1,0 +1,164 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.modal {
+  background: var(--color-bg-elevated);
+  color: var(--color-text);
+  border-radius: 12px;
+  max-width: 440px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: auto;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--color-text-muted);
+  padding: 0.25rem;
+}
+
+.close:hover {
+  color: var(--color-text);
+}
+
+.body {
+  padding: 1.25rem;
+}
+
+.stepLabel {
+  margin: 0 0 1rem;
+  font-weight: 600;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.option,
+.optionActive {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.option:hover,
+.optionActive:hover {
+  border-color: var(--color-accent);
+}
+
+.optionActive {
+  border-color: var(--color-accent);
+  background: rgba(37, 99, 235, 0.1);
+}
+
+.contactFields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contactFields label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.contactFields label span {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.contactFields input,
+.contactFields textarea {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.contactFields textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.secondaryButton {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  border-radius: 6px;
+}
+
+.secondaryButton:hover {
+  background: var(--color-bg);
+}
+
+.ctaButton {
+  padding: 0.5rem 1rem;
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.ctaButton:hover:not(:disabled) {
+  background: var(--color-accent-hover);
+}
+
+.ctaButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.successMessage,
+.errorMessage {
+  margin: 0 0 1rem;
+}
+
+.errorMessage {
+  color: #dc2626;
+}

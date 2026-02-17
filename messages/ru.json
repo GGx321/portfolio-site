@@ -1,0 +1,108 @@
+{
+  "nav": {
+    "home": "Главная",
+    "about": "О нас",
+    "reviews": "Отзывы",
+    "portfolio": "Портфолио",
+    "contact": "Контакты",
+    "orderProject": "Сделать заказ"
+  },
+  "home": {
+    "heroTitle": "Фуллстек-разработчик",
+    "heroSubtitle": "Веб-приложения, API и чистый код.",
+    "aboutTeaser": "Делаю современные веб-продукты от идеи до продакшена. Фокус на производительности, SEO и поддерживаемости.",
+    "learnMore": "Подробнее",
+    "skillsTitle": "Технологии",
+    "ctaTitle": "Хотите обсудить проект?",
+    "ctaButton": "Сделать заказ",
+    "heroBadge": "Разработка под ключ",
+    "aboutTitle": "О нас",
+    "aboutDesc": "От идеи до продукта: концепция, дизайн, разработка и запуск. Фуллстек, Telegram-боты, Mini App и Web3.",
+    "stackTitle": "Стек технологий",
+    "stackSub": "Используем современные и проверенные технологии.",
+    "servicesTitle": "Что делаем",
+    "servicesSub": "Полный цикл от идеи до релиза.",
+    "service1Title": "Сайты и магазины",
+    "service1Desc": "Сайты-визитки, лендинги, интернет-магазины.",
+    "service2Title": "Telegram-боты и Mini App",
+    "service2Desc": "Боты, Mini Apps, интеграции.",
+    "service3Title": "Web3 и крипто",
+    "service3Desc": "Смарт-контракты, dApps, интеграции.",
+    "reviewsTitle": "Отзывы",
+    "review1Quote": "Быстро и качественно. Рекомендую.",
+    "review1Author": "— Клиент А",
+    "review2Quote": "Всё в срок, отличная коммуникация.",
+    "review2Author": "— Клиент Б",
+    "review3Quote": "Профессиональный подход, закажу ещё.",
+    "review3Author": "— Клиент В",
+    "orderSectionTitle": "Сделать заказ",
+    "orderSectionSub": "Опишите проект — мы свяжемся с вами."
+  },
+  "portfolio": {
+    "title": "Портфолио",
+    "viewProject": "Смотреть проект",
+    "noProjects": "Проекты скоро появятся."
+  },
+  "about": {
+    "title": "Обо мне",
+    "body": "Фуллстек-разработчик с опытом создания веб-приложений, API и инструментов. Делаю акцент на ясности, производительности и долгосрочной поддерживаемости."
+  },
+  "contact": {
+    "title": "Контакты",
+    "description": "Напишите или начните проект.",
+    "orderProject": "Заказать проект"
+  },
+  "orderQuestions": {
+    "project_type": {
+      "label": "Что за проект?",
+      "site": "Сайт-визитка",
+      "shop": "Интернет-магазин",
+      "tg_bot": "Telegram-бот",
+      "tg_miniapp": "Telegram Mini App",
+      "web3": "Web3"
+    },
+    "has_design": {
+      "label": "Есть ли дизайн?",
+      "yes": "Да",
+      "no": "Нет",
+      "example": "Есть пример"
+    }
+  },
+  "orderModal": {
+    "title": "Заказать проект",
+    "next": "Далее",
+    "back": "Назад",
+    "submit": "Отправить",
+    "close": "Закрыть",
+    "descriptionLabel": "Опишите ваш проект",
+    "contactMethod": "Как с вами связаться?",
+    "telegram": "Telegram",
+    "email": "Email",
+    "yourName": "Ваше имя",
+    "phone": "Номер телефона",
+    "telegramUsername": "Юзернейм Telegram (например @username)",
+    "yourEmail": "Ваш email",
+    "successMessage": "Спасибо! Я свяжусь с вами в ближайшее время.",
+    "errorMessage": "Что-то пошло не так. Попробуйте ещё раз."
+  },
+  "theme": {
+    "light": "Светлая",
+    "dark": "Тёмная"
+  },
+  "footer": {
+    "about": "О нас",
+    "reviews": "Отзывы",
+    "telegram": "Telegram",
+    "copyright": "© {year} · Разработка под ключ"
+  },
+  "metadata": {
+    "homeTitle": "Фуллстек-разработчик | Портфолио",
+    "homeDescription": "Портфолио и контакты для фуллстек-разработки.",
+    "portfolioTitle": "Портфолио | Проекты",
+    "portfolioDescription": "Избранные веб- и программные проекты.",
+    "aboutTitle": "Обо мне | Фуллстек-разработчик",
+    "aboutDescription": "Обо мне и моём опыте.",
+    "contactTitle": "Контакты | Фуллстек-разработчик",
+    "contactDescription": "Свяжитесь для обсуждения проекта."
+  }
+}
